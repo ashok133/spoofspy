@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+
+<!--@author Ashok Patel-->
+
+<html>
+
+<head>
+  <title>Approach | Spoofspy</title>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styler.css">
+
+  <!-- jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+  <!-- Materialise CSS -->
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- vue js -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <!-- firebase -->
+  <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-wrapper custom-nav custom-brand-logo">
+      <span class="custom-brand-logo"><a href="index.html" class="brand-logo">Spoofspy</a></span>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="about.html">About</a></li>
+        <li><a href="#!">How It Works</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="index.html"><span style="font-size: 32px;">Spoofspy</span></a></li>
+    <hr width>
+    <li><a href="about.html">About</a></li>
+    <li><a href="#!">How it Works</a></li>
+  </ul>
+
+  <div id="apiCallerDiv">
+
+    <div class="welcome-text-about">
+      <p>Project architecture coming soon</p>
+    </div>
+    <!-- <hr> -->
+    <div class="rec-separator">
+    </div>
+    <div class="about-text">
+      Built with <img src = 'images/icons/gcloud.png' style='vertical-align: middle;  height: 22px; margin-bottom: 4px;'/> by <a href="https://www.linkedin.com/in/ashok-patel/">Ashok Patel</a>
+      <br>
+      <br>
+    </div>
+
+
+
+  </div>
+
+  <!-- Vue app -->
+  <script type="text/javascript" src="js/apiCaller.js"></script>
+
+  <!--Custom scripts-->
+  <script>
+
+  // Mobile nave bar
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+  </script>
+
+
+
+</body>
+
+</html>

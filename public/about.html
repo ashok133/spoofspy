@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+
+<!--@author Ashok Patel-->
+
+<html>
+
+<head>
+  <title>About | Spoofspy</title>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styler.css">
+
+  <!-- jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+  <!-- Materialise CSS -->
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- vue js -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <!-- firebase -->
+  <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-wrapper custom-nav custom-brand-logo">
+      <span class="custom-brand-logo"><a href="index.html" class="brand-logo">Spoofspy</a></span>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#!">About</a></li>
+        <li><a href="approach.html">How It Works</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="index.html"><span style="font-size: 32px;">Spoofspy</span></a></li>
+    <hr width>
+    <li><a href="#!">About</a></li>
+    <li><a href="approach.html">How it Works</a></li>
+  </ul>
+
+  <div id="apiCallerDiv">
+
+    <div class="welcome-text-about">
+      <p>Tracking spoofed art and giving artists their due credit.</p>
+    </div>
+    <!-- <hr> -->
+    <div class="rec-separator"></div>
+    <div class="about-text">
+      <a href="https://www.facebook.com/miten.lapsiya">Mr. Miten Lapsiya</a> is an acclaimed digital artist from India. Remotely sitting in his office in Jalgaon, he has been painting beautiful digital portraits of influencers across multiple domains - entertainment, sports, literature, technology, etc. His work has been appreciated all over the globe with eminent personalities such as Amitabh Bachchan constantly supporting and <a href="https://www.news18.com/photogallery/movies/meet-miten-lapsiya-fan-of-amitabh-bachchan-who-is-winning-hearts-with-his-artworks-2037755-5.html">cherishing his passion.</a>
+      <br><br>
+      I've witnessed his passion taking the form of digital paintings, first-hand. I've always wondered how can he make sure his art reaches the audience it deserves. While this challenge has been dealt with over the past couple of years, something tangential boggled my mind recently.
+      <br><br>
+      A couple of Miten's digital paintings were being resold as full-size posters on amazon.com by a verified reseller without consent or any form of credit. As one would expect, he reported the product and pulled it down. This incident got me thinking - there would be so many artists akin to Miten, as underdogs trying to tackle art spoofing.
+      Surprisingly enough, that's not where it stopped. I quickly wrote a script to call Google Cloud Vision and see if Google's knowledge base can help us identify web entities related to his art published online. For a similar image, the call requests returned links to pages on flipkart.com, and a similar story ensued.
+      <br><br>
+      Spoofspy is the result of this realisation - Artists should have entire control over where, in this unfathomable network, is their art used and in what manner.
+      <br><br>
+    </div>
+    <br>
+    <div class="rec-separator"></div>
+    <div class="about-text">
+      Built with <img src = 'images/icons/gcloud.png' style='vertical-align: middle;  height: 22px; margin-bottom: 4px;'/> by <a href="https://www.linkedin.com/in/ashok-patel/">Ashok Patel</a>
+      <br>
+      <br>
+    </div>
+
+
+
+  </div>
+
+  <!-- Vue app -->
+  <script type="text/javascript" src="js/apiCaller.js"></script>
+
+  <!--Custom scripts-->
+  <script>
+
+  // Mobile nave bar
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+  </script>
+
+
+
+</body>
+
+</html>

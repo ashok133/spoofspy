@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+
+<!--@author Ashok Patel-->
+
+<html>
+
+<head>
+  <title>Spoofspy</title>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styler.css">
+
+  <!-- jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+  <!-- Materialise CSS -->
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Icons -->
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- vue js -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <!-- firebase -->
+  <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-wrapper custom-nav custom-brand-logo">
+      <span class="custom-brand-logo"><a href="#!" class="brand-logo">Spoofspy</a></span>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="about.html">About</a></li>
+        <li><a href="approach.html">How It Works</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="#.html"><span style="font-size: 32px;">Spoofspy</span></a></li>
+    <hr width>
+    <li><a href="about.html">About</a></li>
+    <li><a href="approach.html">Approach</a></li>
+  </ul>
+
+  <div id="apiCallerDiv">
+
+    <div class="welcome-text">
+      <p>Tracking spoofed art and giving artists their due credit.</p>
+    </div>
+
+    <div class="file-upload-div">
+      <div class="card">
+        <div class="card-image">
+          <img id="src-decoded" src="images/sample.jpg">
+        </div>
+      </div>
+        <div class="col s12 m6">
+          <div class = "file-field">
+            <div style="background: white; color: #2196F3;" class = "btn">
+                <span>Browse</span>
+                <input type = "file" id="src-img"/>
+            </div>
+            <div class = "file-path-wrapper">
+                <!-- <div class="file-path validate"></div> -->
+                <input class = "file-path validate" type = "text" placeholder = "Upload image" />
+            </div>
+
+          </div>
+          <!-- <button type="button" class="btn red darken-1" @click="detectSimilarImages">CHECK FOR SPOOF</button> -->
+        </div>
+        <div class="col s12 m6">
+          <!-- <button type="button" class="btn red darken-1" @click="detectSimilarImages">CHECK FOR SPOOF</button> -->
+        </div>
+
+      <br>
+      <button type="button" class="btn red darken-1" @click="detectSimilarImages">CHECK FOR SPOOF</button>
+      <!-- <br> -->
+    </div>
+
+
+    <div class="results-div">
+      <div class="card results-card">
+        <div class="results-text">
+          <p>Results</p>
+          <div class="content-links">
+            Possible links where art is spoofed:
+          </div>
+          <div class="result-links">
+            <div v-if="similarity_response">
+              <ul class="collection">
+                <div v-for="item in similarity_response.responses[0].webDetection.pagesWithMatchingImages">
+                  <li class="collection-item"><a :href='item.url' target="_blank">{{item.url}}</a></li>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vue app -->
+  <script type="text/javascript" src="js/apiCaller.js"></script>
+
+  <!--Custom scripts-->
+  <script>
+
+  // Mobile nave bar
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+  </script>
+
+
+
+</body>
+
+</html>
